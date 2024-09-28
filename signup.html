@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="signup.css">
+    <link rel="icon" href="./assets/logo.svg" type="image/svg+xml" sizes="any">
+    <script>
+        // Function to validate the login and navigate to the new page
+        function f1() {
+            var x = document.getElementById('em').value;
+            if (x === "akhockey59@gmail.com") {
+                window.open("web.html");
+            } else {
+                alert('Your username is incorrect');
+            }
+        }
+
+        // Function to toggle the dropdown menu on mobile and tablet screens
+        document.addEventListener("DOMContentLoaded", function () {
+            const navbar = document.getElementById('navbar');
+            navbar.addEventListener('click', function () {
+                navbar.classList.toggle('active');
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="hero">
+        <video autoplay loop muted playsinline class="bgvideo">
+            <source src="./assets/cloud.mp4" type="video/mp4">
+        </video>
+
+        <!-- Navigation -->
+        <nav id="navbar">
+            <svg class="logo" xmlns="http://www.w3.org/2000/svg" style="color: aliceblue;" width="50" height="50"
+                fill="currentColor" class="bi bi-box-fill" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                    d="M15.528 2.973a.75.75 0 0 1 .472.696v8.662a.75.75 0 0 1-.472.696l-7.25 2.9a.75.75 0 0 1-.557 0l-7.25-2.9A.75.75 
+                0 0 1 0 12.331V3.669a.75.75 0 0 1 .471-.696L7.443.184l.004-.001.274-.11a.75.75 0 0 1 .558 0l.274.11.004.001 
+                6.971 2.789Zm-1.374.527L8 5.962 1.846 3.5 1 3.839v.4l6.5 2.6v7.922l.5.2.5-.2V6.84l6.5-2.6v-.4l-.846-.339Z" />
+            </svg>
+            <ul>
+                <li><a href="./index.html">HOME</a></li>
+                <li><a href="./content.html">CONTENT</a></li>
+                <li><a href="./example.html">TREE VIEW</a></li>
+                <li><a href="./web.html">CODE EDITOR</a></li>
+            </ul>
+        </nav>
+
+        <!-- Content -->
+        <div class="content">
+            <h1>LOGIN</h1>
+            <a href="index.html">EXPLORE OUR SITE....</a>
+
+            <form class="signup">
+                <input type="email" placeholder="email address" required id="em">
+                <button type="button" id="sub" onclick="f1()">Get Started</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

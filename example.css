@@ -1,0 +1,178 @@
+/* Base Styles (for desktop or larger screens) */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/*header {
+    background: #137dc4;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+}*/
+*header {
+    position: relative; /* Ensure the header is positioned relative to the video */
+    background: #63717a; /* Fallback color */
+    color: rgb(255, 255, 255);
+    padding: 10px 20px;
+    text-align: center;
+    overflow: hidden; /* Prevent overflow of video */
+}
+
+.tree-type img{
+    width: 80%; /* Adjust width */
+    height: 60%; /* Maintain aspect ratio */
+    max-width: 600px; /* Optional max width */
+    max-height: 700px;
+    margin: 20px auto;
+    display: block; /* Center image */
+}
+
+.tree-type img:hover{
+    transition: 1s;
+    box-shadow: 
+    rgba(4, 241, 48, 0.5) 0px 54px 60px,   /* Top shadow */
+    rgba(32, 239, 28, 0.4) 0px -12px 40px,  /* Top shadow */
+    rgba(16, 227, 58, 0.3) 0px 4px 10px,    /* Side shadow */
+    rgba(12, 196, 43, 0.2) 0px 1px 1px,     /* Bottom shadow (reduced travel) */
+    rgba(0, 0, 0, 0.05) 0px -3px 5px;        /* Black shadow (faint effect) */
+
+}
+.text-background {
+    background: url('./assets/rainy.jpeg') no-repeat center center; /* Set the background image */
+    background-size: cover; /* Ensure the background covers the text */
+    -webkit-background-clip: text; /* Clip the background to the text */
+    color: transparent; /* Make the actual text transparent */
+    font-size: 80px; /* Adjust the size of the text */
+    font-weight: bold; 
+    transform: scale(1.1);
+    /* Make the text bold */
+}
+.text-background:hover {
+    background-color: #0a97ee;  /* Change background color on hover */
+    color:rgb(91, 13, 199);
+}
+
+
+main {
+    padding: 20px;
+    .tree-type h2 {
+        color: #820ae4; /* Default color */
+        transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+    }
+    
+    .tree-type h2:hover {
+        color: #0cea65; /* Change color on hover */
+        transform: scale(1.1); /* Slightly increase the size on hover */
+    }
+    
+}
+
+/*.tree-type {
+    background: rgb(225, 186, 186);
+    margin: 10px 0;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}*/
+.tree-type img {
+    display: block;    /* Makes the image a block-level element */
+    margin-left: auto; /* Left margin set to auto */
+    margin-right: auto;/* Right margin set to auto */
+    width: 60%; 
+    height:0%;       /* Optional: Adjust the width as per your needs */
+}
+.tree-type img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    align-items: center;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #333;
+    color: rgb(222, 227, 225);
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Media Queries */
+
+/* For small screens (phones) */
+@media (max-width: 600px) {
+    header {
+        padding: 10px;
+        font-size: 18px; /* Reduce header font size */
+    }
+
+    main {
+        padding: 10px;
+    }
+
+    .tree-type {
+        padding: 15px;
+        margin: 5px 0;
+        box-shadow: none; /* Remove shadow for small devices */
+    }
+
+    footer {
+        padding: 8px;
+        font-size: 14px; /* Reduce footer font size */
+    }
+}
+
+/* For medium screens (tablets) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    header {
+        padding: 15px 25px;
+        font-size: 22px; /* Adjust font size for tablets */
+    }
+
+    main {
+        padding: 15px;
+    }
+
+    .tree-type {
+        padding: 20px;
+        margin: 10px 0;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Lighter shadow for tablets */
+    }
+
+    footer {
+        padding: 10px;
+        font-size: 16px; /* Adjust footer font size */
+    }
+}
+
+/* For large screens (desktops and larger devices) */
+@media (min-width: 1025px) {
+    body {
+        font-size: 18px;
+    }
+
+    header {
+        padding: 20px 40px;
+        font-size: 26px; /* Larger font size for bigger screens */
+    }
+
+    main {
+        padding: 30px;
+    }
+
+    .tree-type {
+        padding: 25px;
+        margin: 15px 0;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* More prominent shadow for large screens */
+    }
+
+    footer {
+        padding: 15px;
+        font-size: 18px;
+    }
+}

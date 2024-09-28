@@ -1,0 +1,197 @@
+@font-face {
+    font-family: 'Neon Glow';
+    src: url(https://assets.codepen.io/230569/NeonGlow-8VLz.ttf);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background-color: #101010;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+    align-items: center; 
+    background-image: url('./assets/stock1.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh; 
+}
+
+header {
+    margin: 20px 0;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input {
+    padding: 10px;
+    margin-bottom: 10px; 
+    width: 200px;
+    border-radius: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 5px; 
+    cursor: pointer;
+    background-color: #00b86b;
+    border-radius: 10px;
+    color: #f9f9f9;
+}
+button:hover {
+    background-color: #f9f9f9;
+    color: #00b86b;
+    transition: 0.5s;
+}
+
+.tree-container {
+    position: relative;
+    display: block; 
+    border: 5px solid #a61f1f; 
+    border-radius: 5px; 
+    width: 100%; 
+    min-width: 800px; 
+    min-height: 300px; /* Minimum height for the container */
+    padding: 10px;
+    overflow: visible; 
+    transition: height 0.3s ease; /* Smooth transition for height changes */
+}
+
+#svg-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;  /* Cover the entire tree-container */
+    pointer-events: none;  /* Allow clicks to go through */
+}
+.line {
+    stroke: #e196a5; /* Line color */
+    stroke-width: 4;
+    box-shadow: 0 0 20px rgba(226, 35, 35, 0.93), 0 0 40px rgba(216, 30, 30, 0.586);
+}
+
+
+.node {
+    font-family: 'Neon Glow', Arial, sans-serif; 
+    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+    color: black;
+    padding: 10px 20px; 
+    border-radius: 12px; 
+    text-align: center; 
+    box-shadow: 0 0 20px rgba(31, 15, 212, 0.655), 0 0 40px rgba(65, 11, 226, 0.586);
+    transition: transform 0.3s, background-color 0.3s; /* Smooth transition */
+    min-width: 50px; /* Ensure nodes have minimum width */
+    z-index: 1; /* Ensure nodes are on top */
+    margin: 5px; /* Add margin to nodes */
+}
+
+
+.node:hover {
+    transform: scale(1.05); 
+    background-color: rgba(255, 255, 255, 0.3); /* Change background on hover */
+}
+.form{
+    margin-top: 30px;
+}
+
+/* Mobile Styles */
+@media (max-width: 480px) {
+    input {
+        width: 150px; 
+    }
+
+    .tree-container {
+        min-height: 200px; 
+        min-width: 300px; /* Adjust height for mobile devices */
+        padding: 5px; /* Optional: Adjust padding for smaller screens */
+    }
+
+    #svg-container {
+        height: 100%; /* Full height for mobile */
+        width: 100%; /* Full width for mobile */
+    }
+
+    .node {
+        margin: 5px; /* Margin for nodes */
+        padding: 8px 15px; /* Adjust padding for smaller nodes */
+    }
+}
+
+/* Tablet Styles */
+@media (min-width: 481px) and (max-width: 768px) {
+    input {
+        width: 200px; 
+    }
+
+    .tree-container {
+        min-height: 300px; /* Maintain height for tablets */
+        min-width: 500px; /* Adjust minimum width for tablets */
+        padding: 10px; /* Optional: Adjust padding for tablets */
+    }
+
+    #svg-container {
+        height: 100%; /* Full height for tablets */
+        width: 100%; /* Full width for tablets */
+    }
+
+    .node {
+        margin: 10px; /* Margin for nodes */
+        padding: 10px 20px; /* Adjust padding for larger nodes */
+    }
+}
+
+/* Laptop Styles */
+@media (min-width: 769px) and (max-width: 1024px) {
+    input {
+        width: 250px; 
+    }
+
+    .tree-container {
+        min-height: 350px; /* Adjust height for laptops */
+    }
+
+    #svg-container {
+        height: 100%; /* Full height for laptops */
+        width: 100%; /* Full width for laptops */
+    }
+}
+
+/* Large Screen Styles */
+@media (min-width: 1025px) {
+    input {
+        width: 300px; 
+    }
+
+    .tree-container {
+        min-height: 450px; /* Maintain height for large screens */
+    }
+
+    #svg-container {
+        height: 100%; /* Full height for large screens */
+        width: 100%; /* Full width for large screens */
+    }
+}
+
+

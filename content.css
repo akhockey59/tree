@@ -1,0 +1,225 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+}
+
+header {
+    /* background: #35424a; */
+    background-image: url('https://wallpaperaccess.com/full/1184414.jpg');
+    color: hwb(270 8% 21%);
+    padding: 10px 0;
+    text-align: center;
+}
+/*ye hai*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000; 
+    background: #118fde; 
+    background-image: url('assets/content1.jpg');
+    background-size: cover; /* Ensures the image covers the entire nav */
+    background-position: center; /* Centers the image */
+    color: #ffffff;
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: none; /* Hide the menu by default */
+}
+
+nav ul.show {
+    display: block; /* Show the menu when the class is added */
+}
+
+nav ul li {
+    display: inline; /* Use inline for desktop view */
+    margin: 0 20px; /* Margin for spacing */
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+main {
+    padding: 20px;
+}
+a{
+    color: #2859cc;
+    text-decoration: none;
+    
+}
+a:hover{
+    color: hsla(130, 100%, 50%, 0.873); /* Changes text color on hover */
+    background-color: #555681; /* Changes background color on hover */
+    border-radius: 5px; /* Adds rounded corners on hover */
+}
+section {
+    background: #7e9dc0;
+    border: 1px solid #dddddd;
+    color: #ffffff;
+    border-radius: 5px;
+    padding: 15px;
+    text-align: left;
+}
+
+
+
+
+
+
+
+h2 {
+    color: #8503f7;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background: #8e9ea8;
+    color: #ffffff;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+img {
+    margin-left: 20%;
+    width: 60%;
+    height: 60%;
+    border-radius: 20px;
+}
+
+p {
+    font-size: 20px;
+}
+
+/* section:hover {
+    transition: 1s;
+    box-shadow: rgba(5, 9, 235, 0.86) 0px 10px 20px, rgba(13, 9, 229, 0.22) 0px 5px 10px; /* Adjusted shadow values */
+    /* border-radius: 10px; */
+/* }  */
+
+img:hover {
+    transition: 1s;
+    box-shadow: 
+    rgba(183, 12, 196, 0.5) 0px 54px 60px,   /* Top shadow */
+    rgba(183, 12, 196, 0.4) 0px -12px 40px,  /* Top shadow */
+    rgba(183, 12, 196, 0.3) 0px 4px 10px,    /* Side shadow */
+    rgba(183, 12, 196, 0.2) 0px 1px 1px,     /* Bottom shadow (reduced travel) */
+    rgba(0, 0, 0, 0.05) 0px -3px 5px;        /* Black shadow (faint effect) */
+}
+
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #35424a;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 18px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+}
+
+#scrollToTopBtn.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+#scrollToTopBtn:hover {
+    background-color: #506f82;
+}
+
+/* Media query for mobile responsiveness */
+@media (max-width: 768px) {
+    nav ul {
+        display: none; /* Hide the list items */
+        flex-direction: column; /* Stack items vertically */
+        width: 100%; /* Full width */
+        padding: 0; /* Remove padding */
+        margin: 0; /* Remove margin */
+        background-color: #35424a; /* Background color for dropdown */
+        position: absolute; /* Position dropdown below the navbar */
+        top: 100%; /* Align with the bottom of the navbar */
+        left: 0; /* Align to the left */
+        z-index: 999; /* Ensure it's above other content */
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for dropdown */
+    }
+
+    nav ul.show {
+        display: flex; /* Show dropdown when toggled */
+    }
+
+    /* Button to toggle dropdown */
+    .dropdown-toggle {
+        cursor: pointer;
+        color: #ffffff;
+        padding: 10px;
+        background: transparent;
+        border: none;
+        font-size: 18px;
+    }
+
+    .dropdown-toggle:hover {
+        text-decoration: underline; /* Hover effect */
+    }
+
+    /* Style for individual list items in mobile */
+    nav ul li {
+        width: 100%; /* Full width for each item */
+        border-bottom: 1px solid #dddddd; /* Divider between items */
+    }
+
+    nav ul li a {
+        padding: 15px; /* Add padding for clickable area */
+        display: block; /* Make the entire area clickable */
+        color: #ffffff; /* Text color */
+        text-align: left; /* Align text to the left */
+    }
+
+    nav ul li a:hover {
+        background-color: rgba(222, 13, 237, 0.2); /* Background color on hover */
+    }
+}
+
+/* Media query for desktop view */
+@media (min-width: 768px) {
+    nav ul {
+        display: flex; /* Use flex for desktop view */
+    }
+    #navToggle {
+        display: none; /* Hide toggle button on desktop */
+    }
+}

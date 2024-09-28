@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Types of Trees in Data Structures</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="content.css">
+    <style>
+        /* Media queries for responsive image */
+        .responsive-image {
+            height: 400px; /* Default height */
+            width: 600px;  /* Default width */
+        }
+
+        @media (max-width: 768px) {
+            .responsive-image {
+                width: 100%;  /* Full width on smaller screens */
+                height: auto;
+                margin-left: 0%; /* Maintain aspect ratio */
+            }
+        }
+        @media (max-width: 480px){
+            .responsive-image{
+                width: 100%;
+                height: auto;
+                margin-left: 0%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <header>
+
+
+
+
+
+
+        <h1>Types of Trees in Data Structures</h1>
+    </header>
+    
+    <nav>
+        <button id="navToggle" aria-label="Toggle Navigation" style="background: none; border: none; color: white; cursor: pointer;">
+            <i class="fas fa-bars"></i> <!-- Font Awesome icon for the menu -->
+        </button>
+        <ul>
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#binary-tree">Binary Tree</a></li>
+            <li><a href="#ternary-tree">Ternary Tree</a></li>
+            <li><a href="#perfect-tree">Perfect Tree</a></li>
+            <li><a href="#balanced-tree">Balance Tree</a></li>
+            <li><a href="#complete-tree">Complete Tree</a></li>
+            <li><a href="#full-tree">Full Tree</a></li>
+            <li><a href="#n-ary-tree">N-ary Tree</a></li>
+            <li><a href="#avl-tree">AVL Tree</a></li>
+            <li><a href="#red-black-tree">Red-Black Tree</a></li>
+            <li><a href="#conclusion">Conclusion</a></li>
+        </ul>
+    </nav>
+    
+
+    <main>
+       
+        <section id="introduction">
+            <h2>Introduction</h2>
+            <p>A Tree is a non-linear data structure and a hierarchy consisting of a collection of nodes such that each node of the tree stores a value and a list of references to other nodes (the “children”).</p>
+            <img src="./assets/tree.avif" alt="Tree" width="600" height="400">
+            <p><b>Types of Trees in Data Structure based on the number of children:</b></p>
+            <img src="./assets/types.png" alt="Types of Trees" width="600" height="400">
+        </section>
+
+
+
+
+
+
+
+        <section id="binary-tree">
+            <h2>1. Binary Tree</h2>
+            <p>A binary tree is a data structure in which each node has at most two children referred to as the left child and the right child.</p>
+            <ul>
+                <li>Each node has at most two children.</li>
+                <li>The tree is typically organized into levels or layers.</li>
+                <li>Binary trees are used for searching, sorting, and hierarchical data storage.</li>
+                <li>Common operations include insertion, deletion, and traversal (preorder, inorder, postorder).</li>
+            </ul>
+            <p><b>Example:</b></p>
+            <p>Consider the tree below. Each node has only 2 children, making it a Binary Tree.</p>
+            <img src="./assets/binary.png" alt="Binary Tree" width="600" height="400">
+            <p><a href="https://www.geeksforgeeks.org/binary-tree-data-structure/" target="_blank">Read more about Binary Trees......</a></p>
+        </section>
+        
+        
+
+        <section id="ternary-tree">
+            <h2>2. Ternary Tree</h2>
+            <p>A ternary tree is a data structure in which each node can have at most three children, usually referred to as left, middle, and right children.</p>
+            <ul>
+                <li>Each node has at most three children.</li>
+                <li>Commonly used in specialized search algorithms, such as ternary search trees for string processing.</li>
+                <li>Provides more flexibility than binary trees in certain applications.</li>
+            </ul>
+            <p><b>Example:</b></p>
+            <p>Consider the tree below. Each node has up to 3 children, making it a Ternary Tree.</p>
+            <img src="./assets/ternary.jpeg" alt="Ternary Tree" width="600" height="400">
+            <p><a href="https://www.javatpoint.com/ternary-tree" target="_blank">Read more about Ternary Trees......</a></p>
+        </section>
+        
+        
+
+        <section id="perfect-tree">
+            <h2>3. Perfect Tree</h2>
+            <p>A perfect binary tree is a binary tree in which all interior nodes have two children and all leaves are at the same level.</p>
+            <ul>
+                <li>All leaf nodes are at the same depth.</li>
+                <li>Every non-leaf node has exactly two children.</li>
+                <li>Completely filled at every level.</li>
+                <li>Perfect trees are highly balanced, ensuring optimal performance for traversal and searching operations.</li>
+            </ul>
+            <p><b>Example:</b></p>
+            <img src="./assets/perfect.jpg" alt="Perfect Tree" width="600" height="400">
+            <p><a href="https://www.tutorialspoint.com/perfect-binary-tree" target="_blank">Read more about Perfect Trees......</a></p>
+        </section>
+        
+        
+
+        <section id="balanced-tree">
+            <h2>4. Balanced Tree</h2>
+            <p>A balanced binary tree maintains its height at O(log n) to ensure optimal performance for various operations like search, insert, and delete.</p>
+            <ul>
+                <li>Height is kept as low as possible (O(log n)).</li>
+                <li>Ensures efficient searching, inserting, and deleting operations.</li>
+                <li>Examples include AVL trees and Red-Black trees.</li>
+                <li>Used extensively in databases and file systems for efficient indexing.</li>
+            </ul>
+            <p><b>Example:</b></p>
+            <img src="./assets/balanced.webp" alt="Balanced Tree" width="600" height="400">
+            <p><a href="https://www.geeksforgeeks.org/balanced-binary-tree/" target="_blank">Read more about Balanced Trees......</a></p>
+        </section>
+        
+        
+
+        <section id="complete-tree">
+            <h2>5. Complete Tree</h2>
+            <p>A complete binary tree is a binary tree where all levels except possibly the last are completely filled, and the last level is filled from left to right.</p>
+            <ul>
+                <li>All levels except the last are fully filled.</li>
+                <li>Nodes at the last level are filled from the leftmost side.</li>
+                <li>Used in heap data structures to maintain efficient priority queue operations.</li>
+                <li>Guarantees O(log n) height for optimal performance.</li>
+            </ul>
+            <p><b>Example:</b></p>
+            <img src="./assets/complete.jpg" alt="Complete Tree" class="responsive-image">
+            <p><a href="https://www.educative.io/edpresso/what-is-a-complete-binary-tree" target="_blank">Read more about Complete Trees......</a></p>
+        </section>
+        
+        
+
+        <section id="full-tree">
+            <h2>6. Full Tree</h2>
+            <p>A full binary tree is a binary tree in which every node other than the leaves has two children.</p>
+            <ul>
+                <li>Every node has either 0 or 2 children.</li>
+                <li>All leaf nodes are at the same level.</li>
+                <li>Efficient for traversal and storage in hierarchical structures like decision trees.</li>
+            </ul>
+            <p><b>Example:</b></p>
+            <img src="./assets/full.png" alt="Full Tree" width="600" height="400">
+            <p><a href="https://www.javatpoint.com/full-binary-tree" target="_blank">Read more about Full Trees......</a></p>
+        </section>
+        
+        
+
+        <section id="n-ary-tree">
+            <h2>7. N-ary Tree</h2>
+            <p>An N-ary tree is a tree data structure where each node can have at most N children.</p>
+            <ul>
+                <li>Each node can have up to N children.</li>
+                <li>Generalizes binary trees by allowing more than two children per node.</li>
+                <li>Commonly used in file systems, decision trees, and other hierarchical data storage.</li>
+            </ul>
+            <p><b>Example:</b></p>
+            <img src="./assets/Nary.png" alt="N-ary Tree" width="600" height="400">
+            <p><a href="https://www.geeksforgeeks.org/n-ary-tree/" target="_blank">Read more about N-ary Trees......</a></p>
+        </section>
+        
+        
+        <section id="avl-tree">
+            <h2>8. AVL Tree</h2>
+            <p>An AVL tree is a self-balancing binary search tree in which the heights of the two child subtrees of any node differ by at most one.</p>
+            <ul>
+                <li>Self-balancing binary search tree.</li>
+                <li>Height difference between subtrees is at most one.</li>
+                <li>Ensures O(log n) time complexity for search, insertion, and deletion operations.</li>
+                <li>Commonly used in database indexing and memory management.</li>
+            </ul>
+            <p><b>Example:</b></p>
+            <img src="./assets/avl.png" alt="AVL Tree" width="600" height="400">
+            <p><a href="https://www.geeksforgeeks.org/avl-tree-set-1-insertion/" target="_blank">Read more about AVL Trees......</a></p>
+        </section>
+        
+        
+        <section id="red-black-tree">
+            <h2>9. Red-Black Tree</h2>
+            <p>A red-black tree is a balanced binary search tree with an additional property that maintains balance during insertions and deletions.</p>
+            <ul>
+                <li>Each node is either red or black.</li>
+                <li>The tree is balanced using a set of balancing rules involving the color of nodes.</li>
+                <li>Efficient for searching, insertion, and deletion with O(log n) time complexity.</li>
+                <li>Used in map and set implementations in programming languages like Java and C++.</li>
+            </ul>
+            <p><b>Example:</b></p>
+            <img src="./assets/redblack.png" alt="Red-Black Tree" width="600" height="400">
+            <p><a href="https://www.tutorialspoint.com/red-black-tree" target="_blank">Read more about Red-Black Trees......</a></p>
+        </section>
+        
+        
+        <section id="conclusion">
+            <h2>Conclusion</h2>
+            <p>Understanding different types of trees is essential for efficient data management and retrieval in computer science. Each type of tree has its unique advantages and use cases.</p>
+            <ul>
+                <li>Binary trees are widely used for hierarchical data storage and searching.</li>
+                <li>Self-balancing trees like AVL and Red-Black trees ensure efficient operations even after multiple insertions and deletions.</li>
+                <li>N-ary trees generalize binary trees, providing flexibility in applications like file systems and decision-making structures.</li>
+            </ul>
+        </section>
+        
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Aakash & Bittu. All Rights Reserved.</p>
+    </footer>
+    
+    <button id="scrollToTopBtn"><i class="fas fa-arrow-up"></i></button>
+
+    <script src="content.js"></script>
+</body>
+</html>

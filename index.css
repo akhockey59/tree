@@ -1,0 +1,377 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+header {
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.15));
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bgvideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: -1;
+  object-fit: cover;
+}
+
+nav {
+  width: 100%;
+  height: 15vh;
+  background: rgba(22, 5, 31, 0.688);
+  color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+  padding: 10px;
+}
+
+nav .logo {
+  width: 25%;
+  text-align: center;
+}
+
+nav .menu {
+  width: 40%;
+  display: flex;
+  justify-content: space-around;
+}
+
+nav .menu a {
+  color: #fff; /* Default link color */
+  text-decoration: none;
+  margin-right: 20px;
+  font-size: 18px; /* Reduced font size */
+  transition: color 0.3s ease, background-color 0.3s ease; /* Smooth transition for hover */
+}
+
+nav .menu a:hover {
+  color: rgba(6, 249, 59, 0.914); /* Text color on hover */
+  padding: 5px; /* Optional padding for a box effect */
+  border-radius: 5px; /* Rounded corners on hover */
+}
+
+nav .menu a:last-child {
+  margin-right: 0;
+}
+
+main {
+  width: 100%;
+  height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+section h3 {
+  font-size: 35px;
+  font-weight: 200;
+  letter-spacing: 3px;
+  text-shadow: 1px 1px 2px black;
+}
+
+section h1 {
+  margin: 30px 0 20px 0;
+  font-size: 55px;
+  font-weight: 700;
+  text-shadow: 2px 1px 5px black;
+  text-transform: uppercase;
+}
+
+section p {
+  font-size: 25px;
+  word-spacing: 2px;
+  margin-bottom: 25px;
+  text-shadow: 1px 1px 1px black;
+}
+
+section a {
+  padding: 12px 30px;
+  border-radius: 4px;
+  outline: none;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: all 0.5s ease;
+}
+
+section .btnone {
+  background: #fff;
+  color: #000;
+}
+
+.btnone:hover {
+  background: #00b894;
+  color: white;
+}
+
+section .btntwo {
+  background: #00b86b;
+  color: white;
+}
+
+.btntwo:hover {
+  background: #fff;
+  color: #000;
+}
+
+.change_content:after {
+  content: "";
+  animation: changetext 10s infinite linear;
+}
+
+
+/*............features start here............*/
+.features{
+  padding: 50px 12%;
+  font-size: 22px;
+  color: white;
+  background-color: black;
+}
+.row{
+ display: flex;
+ width: 100%;
+ align-items: center;
+ flex-wrap: wrap;
+ padding: 50px 0;
+}
+.text-col{
+ flex-basis: 50%;
+ margin-bottom: 20px;
+}
+.img-col{
+ flex-basis: 50%;
+ margin-bottom: 20px;
+}
+@keyframes pop
+{
+ 50%
+ {
+     transform: scale(1.1);
+ }
+}
+.img-col img{
+ display: block;
+ width: 90%;
+ margin: auto;
+ border-radius: 4%;
+box-shadow: 3px 3px 2px 4px #777;
+}  
+.img-col img:hover{
+ animation: pop 0.3s linear 1 ;
+
+} 
+.features h2{
+ font-size: 50px;
+ font-weight: 600;
+ margin-bottom: 20px;
+}
+/*faqs------------*/
+.faqs{
+ padding: 10px 12%;
+ text-align: center;
+ font-size: 18px;
+ color: white;
+ background-image: url('https://affordablehomes.ie/uploads/images/headers/faq.jpg');
+  background-size: cover;
+}
+.faqs h2{
+ font-weight: 500;
+ font-size: 60px;
+ color: red;
+ font-weight: 600;
+}
+.accords{
+ margin: 60px auto;
+ width: 100%;
+ max-width: 750px;
+}
+.accords li{
+ list-style: none;
+ width: 100%;
+ padding: 5px;
+}
+.accords li label{
+ display: flex;
+ align-items: center;
+ padding: 20px;
+ font-size: 18px;
+ font-weight: 500;
+ background: #303030;
+ margin-bottom: 2px;
+ cursor: pointer;
+ position: relative;
+}
+label::after{
+ /*content: '+';*/
+ font-size: 34px;
+ position: absolute;
+ right: 20px;
+ /*transition: transform 0.5s;*/
+}
+
+input[type="radio"]{
+ display: none;
+}
+.accords .content{
+ background: #303030;
+ text-align: left;
+ padding:0 20px;
+ overflow: hidden;
+ transition: max-height 0.5s, padding 0.5s ease-in-out;
+}
+.accords input[type="radio"]:checked + label + .content{
+ max-height: 700px;
+ padding: 30px 20px; 
+ background-color: rgb(66, 111, 128); 
+ color: #0bee8fe4;
+ font-size: 20px;
+ font-weight: 500;
+}
+
+.accords input[type="radio"]:checked + label::after {
+ transform: rotate(135deg);
+}
+
+
+
+
+
+/*footer.......................*/
+.footer{
+ padding: 50px 15% 10px;
+ border-top: 6px solid aquamarine;
+ color:#a69f9f;
+ background-color: black;
+}
+.footer h2{
+ font-size: 18px;
+ font-weight: 400;
+  margin-bottom: 30px;
+  margin-left: 28%;
+}
+.footer .col{
+ flex-basis: 25%;
+ flex-grow: 1;
+ margin-bottom: 20px;
+}
+.footer .col a{
+ display: block;
+ text-decoration: none;
+ color: rgb(249, 252, 252);
+ font-size: 14px;
+ margin-bottom: 10px;
+}
+.footer .row{
+ align-items: flex-start;
+ padding: 10px 0;
+}
+.footer .languagebtn{
+ padding: 10px 20px;
+ border-radius: 5%;
+}
+.copyright{
+ font-size: 14px;
+ margin-top: 20px;
+ margin-bottom: 10px;
+}
+
+
+@keyframes changetext {
+  0% {
+    content: "Binary Tree";
+    animation: changetext 10s infinite linear;
+    color: #046df6;
+  }
+  20% {
+    content: "Ternary Tree";
+    animation: changetext 10s infinite linear;
+    color: #f50606;
+  }
+  30% {
+    content: "Perfect Binary Tree";
+    animation: changetext 10s infinite linear;
+    color: #b5f602;
+  }
+  45% {
+    content: "N-ary-tree";
+    animation: changetext 10s infinite linear;
+    color: #03c9fa;
+  }
+  60% {
+    content: "Balanced Binary Tree";
+    animation: changetext 10s infinite linear;
+    color: #fa0981;
+  }
+  80% {
+    content: "Complete Binary Tree";
+    animation: changetext 10s infinite linear;
+    color: #0b0214d8;
+  }
+  100% {
+    content: "Full Binary Tree";
+    animation: changetext 10s infinite linear;
+    color: #08bd6eb4;
+  }
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  nav .menu {
+    display: none; /* Hide the menu by default */
+    flex-direction: column; /* Stack menu items vertically */
+    position: absolute; /* Position absolutely */
+    top: 15vh; /* Start below the navbar */
+    right: 0; /* Align to the right */
+    background-color: rgba(22, 5, 31, 0.688); /* Background for dropdown */
+    width: 100%; /* Full width */
+  }
+
+  nav .menu.active {
+    display: flex; /* Show menu when active */
+  }
+
+  nav .hamburger {
+    display: flex; /* Show hamburger menu */
+    flex-direction: column; /* Stack bars vertically */
+    cursor: pointer; /* Pointer cursor */
+    height: 25px; /* Set height */
+  }
+
+  nav .hamburger .bar {
+    width: 35px; /* Bar width */
+    height: 4px; /* Bar height */
+    background-color: white; /* Bar color */
+    margin: 2px 0; /* Spacing between bars */
+  }
+
+  nav .menu a {
+    font-size: 16px; /* Smaller font size for mobile */
+    margin: 10px 0; /* Spacing between links */
+  }
+
+  section h3 {
+    font-size: 30px; /* Smaller heading size */
+  }
+
+  section h1 {
+    font-size: 40px; /* Smaller main heading size */
+  }
+
+  section p {
+    font-size: 20px; /* Smaller paragraph size */
+  }
+}

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binary Tree Visualizer</title>
+    <link rel="stylesheet" href="web.css">
+    <link rel="icon" href="./assets/logo.svg" type="image/svg+xml" sizes="any">
+</head>
+<body>
+    <div id="tree-container" class="tree-container"></div>
+    <svg id="svg-container" style="position: absolute; width: 100%; height: 100%; pointer-events: none;"></svg>
+
+    <form id="input-form" class="form" onsubmit="event.preventDefault(); addNode();">
+        <input type="text" id="node-value" placeholder="Enter value" required />
+        <button type="submit">Insert Node</button>
+        <button type="button" onclick="undo()">Undo</button>
+        <button type="button" onclick="redo()">Redo</button>
+    </form>
+    <script>
+       // Define the Tree Node class
+class TreeNode {
+    constructor(value) {
+        this.value = value;
+        this.left = null;
+        this.right = null;
+    }
+}
+
+// Define the Binary Tree class
+class BinaryTree {
+    constructor() {
+        this.root = null;
+    }
+
+    insert(value) {
+        const newNode = new TreeNode(value);
+        if (this.root === null) {
+            this.root = newNode;
+        } else {
+            this.insertNode(this.root, newNode);
+        }
+    }
+
+    insertNode(node, newNode) {
+        if (newNode.value < node.value) {
+            if (node.left === null) {
+                node.left = newNode;
+            } else {
+                this.insertNode(node.left, newNode);
+            }
+        } else {
+            if (node.right === null) {
+                node.right = newNode;
+            } else {
+                this.insertNode(node.right, newNode);
+            }
+        }
+    }
+
+    traverseAndDisplay(node, x, y, container, level = 0, parentX = null, parentY = null) {
+    if (node === null) return;
+
+    // Create a new div element for the node
+    const nodeElement = document.createElement('div');
+    nodeElement.classList.add('node');
+    nodeElement.innerText = node.value;
+
+    // Positioning the node
+    const nodeVerticalOffset = 30; // Vertical offset for node positioning
+    nodeElement.style.position = 'absolute';
+    nodeElement.style.left = `${x}px`;
+    nodeElement.style.top = `${y + nodeVerticalOffset}px`; // Adjust node position
+
+    container.appendChild(nodeElement);
+
+    const horizontalSpacing = 150 / (Math.pow(2, level)); // Spacing
+    const verticalSpacing = 80; // Spacing between levels
+
+    // Draw the connecting line if it's not the root node
+    if (parentX !== null && parentY !== null) {
+    const svgContainer = document.getElementById('svg-container');
+    const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+    line.setAttribute('x1', parentX);
+    line.setAttribute('y1', parentY);
+    line.setAttribute('x2', x + nodeElement.offsetWidth / 2); // Center line on the node
+    line.setAttribute('y2', y + nodeVerticalOffset + 40); // Lower the line further down
+    line.setAttribute('class', 'line'); // Add class for styling
+
+    svgContainer.appendChild(line); // Append the line to the SVG container
+}
+
+    // Recur for left and right children
+    if (node.left !== null) {
+        this.traverseAndDisplay(node.left, x - horizontalSpacing, y + verticalSpacing, container, level + 1, x + nodeElement.offsetWidth / 2, y + nodeVerticalOffset + 40); // Adjust for lower placement
+    }
+
+    if (node.right !== null) {
+        this.traverseAndDisplay(node.right, x + horizontalSpacing, y + verticalSpacing, container, level + 1, x + nodeElement.offsetWidth / 2, y + nodeVerticalOffset + 40); // Adjust for lower placement
+    }
+}
+
+    display(container) {
+        container.innerHTML = ''; // Clear the container
+        this.traverseAndDisplay(this.root, container.offsetWidth / 2 - 25, 20, container); // Adjust x for centering
+    }
+
+    getRoot() {
+        return this.root;
+    }
+}
+
+// Create the tree object
+const tree = new BinaryTree();
+let undoStack = [];
+let redoStack = [];
+
+// Function to handle node insertion
+function addNode() {
+    const value = document.getElementById('node-value').value;
+    if (value === '') {
+        alert('Please enter a value');
+        return;
+    }
+
+    undoStack.push(JSON.stringify(tree.getRoot()));
+    redoStack = []; // Clear redo stack on new action
+
+    tree.insert(parseInt(value));
+    const container = document.getElementById('tree-container');
+    tree.display(container);
+
+    // Clear the input field after inserting
+    document.getElementById('node-value').value = '';
+}
+
+// Undo function
+function undo() {
+    if (undoStack.length === 0) {
+        alert("Nothing to undo.");
+        return;
+    }
+
+    redoStack.push(JSON.stringify(tree.getRoot()));
+    const previousState = undoStack.pop();
+    tree.root = JSON.parse(previousState);
+    const container = document.getElementById('tree-container');
+    tree.display(container);
+}
+
+// Redo function
+function redo() {
+    if (redoStack.length === 0) {
+        alert("Nothing to redo.");
+        return;
+    }
+
+    undoStack.push(JSON.stringify(tree.getRoot()));
+    const nextState = redoStack.pop();
+    tree.root = JSON.parse(nextState);
+    const container = document.getElementById('tree-container');
+    tree.display(container);
+}
+
+// Initial setup: Display the tree
+const container = document.getElementById('tree-container');
+tree.display(container);
+
+    </script>
+</body>
+</html>
